@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  app:
+    build:
+      context: .
+      target: init
+    depends_on:
+      - postgres
+    environment:
+      MIX_ENV: test
+      HISTFILE: .bash_history
+
+      POSTGRES_HOST: postgres
+    ports:
+      - 4000:4000
+    volumes:
+      - .:/opt/app
+    command: ["mix", "test"]
+
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres

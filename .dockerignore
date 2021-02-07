@@ -1,0 +1,86 @@
+# Sensitive Blackbox Data
+/keyrings
+
+# Some sensible defaults, remove at your own risk.
+/.git
+.DS_Store
+
+# For security reasons the following should NEVER be included in a git repo.
+.env
+.ghc.environment.*
+.key
+.pem
+
+# Dependencies or build artifacts have no place in a GitHub repo. If you need
+# to distribute one of the following use GitHub Releases.
+**/*.rs.bk
+*.a
+*.app
+*.aux
+*.beam
+*.chi
+*.chs.h
+*.cmd
+*.d
+*.dll
+*.dll
+*.dylib
+*.dyn
+*.dyn_hi
+*.dyn_o
+*.elf
+*.exe
+*.exe~
+*.ez
+*.hex
+*.hi
+*.hie
+*.hpc
+*.i*86
+*.ko
+*.l
+*.la
+*.lib
+*.lo
+*.o
+*.obj
+*.out
+*.prof
+*.so
+*.so.*
+*.x86_64
+.cabal-sandbox
+.cargo
+.eslintcache
+.exe
+.hpc
+.npm
+.stack-work
+_build
+bower_components
+build
+deps
+dist
+dist-*
+node_modules
+target
+
+# You don't want extranious runtime data in your .gitignore
+*.pid
+*.pid.lock
+*.seed
+pids
+
+# Only include logs you've written yourself
+*.*-log
+*.dump
+*.eventlog
+*.log
+lerna-debug.log*
+logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Manually Added ---- #
+# ...
