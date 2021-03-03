@@ -42,7 +42,11 @@ defmodule BankAPI.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:commanded, "~> 1.2"},
+      {:eventstore, "~> 1.2", runtime: Mix.env() != :test},
+      {:commanded_eventstore_adapter, "~> 1.2", runtime: Mix.env() != :test},
+      {:commanded_ecto_projections, "~> 1.2"}
     ]
   end
 

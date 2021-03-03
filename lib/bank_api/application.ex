@@ -7,20 +7,13 @@ defmodule BankAPI.Application do
 
   def start(_type, _args) do
     children = [
-      # Start the Ecto repository
       BankAPI.Repo,
-      # Start the Telemetry supervisor
       BankAPIWeb.Telemetry,
-      # Start the PubSub system
       {Phoenix.PubSub, name: BankAPI.PubSub},
-      # Start the Endpoint (http/https)
-      BankAPIWeb.Endpoint
-      # Start a worker by calling: BankAPI.Worker.start_link(arg)
-      # {BankAPI.Worker, arg}
+      BankAPIWeb.Endpoint,
+      BankAPI.Accounts.Supervisor
     ]
 
-    # See https://hexdocs.pm/elixir/Supervisor.html
-    # for other strategies and supported options
     opts = [strategy: :one_for_one, name: BankAPI.Supervisor]
     Supervisor.start_link(children, opts)
   end
